@@ -115,7 +115,9 @@ int	main(int argc, char **argv, char **envp)
 	while (++pipex.i < pipex.nb_commands)
 		child(&pipex);
 	close_pipes(&pipex);
-	waitpid(-1, NULL, 0);
+	pipex.i = -1;
+	while (++pipex.i < pipex.nb_commands)
+		waitpid(-1, NULL, 0);
 	free_pipes(&pipex);
 	unlink("here_doc.txt");
 	return (0);
