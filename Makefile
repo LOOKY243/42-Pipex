@@ -34,7 +34,7 @@ clean:
 	@printf "\033[1;35mObjects Deleted!\n\033[0m"
 
 bonus: $(OBJS_BNS) $(LIBFT)
-	@$(CC) $(SRCS_BONUS) $(LIBFT) -o $(NAME)
+	@$(CC) $(OBJS_BONUS) $(LIBFT) -o $(NAME)
 	@printf "\033[1;32mBonus compilation Finished!\n\033[0m"
 
 $(LIBFT):
